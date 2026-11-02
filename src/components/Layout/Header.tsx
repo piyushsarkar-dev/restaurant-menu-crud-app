@@ -1,5 +1,7 @@
+import { HouseIcon, StoreIcon, UtensilsIcon } from "lucide-react";
 import Link from "next/link";
 import GradientText from "../GradientText";
+import { Button } from "../shadcnui/button";
 import ThemeToggleButton from "./ThemeToggleButton";
 
 const Header = () => {
@@ -23,8 +25,30 @@ const Header = () => {
         </Link>
 
         <nav className="flex items-center gap-4">
-          <Link href={"/"}>Home</Link>
-
+          <Link href={"/"}>
+            <Button variant="ghost">
+              <span className="flex items-center gap-2">
+                <HouseIcon className="size-4" />
+                Home
+              </span>
+            </Button>
+          </Link>
+          <Link href="/food/create">
+            <Button variant="ghost">
+              <span className="flex items-center gap-2">
+                <UtensilsIcon className="size-4" />
+                Food
+              </span>
+            </Button>
+          </Link>
+          <Link href="/categories/create">
+            <Button variant="ghost">
+              <span className="flex items-center gap-2">
+                <StoreIcon className="size-4" />
+                Categories
+              </span>
+            </Button>
+          </Link>
           <ThemeToggleButton />
         </nav>
       </div>
